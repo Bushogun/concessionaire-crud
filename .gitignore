@@ -70,6 +70,12 @@ frontend/.angular/cache/*
 **/.sass-cache/
 **/node_modules/
 **/.angular/
+**/.vscode/
+**/.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 **/bower_components/
 */Performance/*TestResults.txt
 **/bin
