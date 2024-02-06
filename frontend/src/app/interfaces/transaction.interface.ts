@@ -1,10 +1,10 @@
 export interface TransactionInterface {
-    idTransaction: Number,
-    modelVehicle: String,
-    clientName: String,
-    concessionaire: String,
-    sellDate: Date,
-    sellPrice: Number,
+    idTransaction: number,
+    modelVehicle: string,
+    clientName: string,
+    concessionaire: string,
+    sellDate: string,
+    sellPrice: number,
 }
 
 
