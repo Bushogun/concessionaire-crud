@@ -27,9 +27,18 @@ export class PageAppComponent implements OnInit {
 
    loadTransactions() {
     this.loading = true;
-    this.transactionService.getData().subscribe(data =>{
+    this.transactionService.getTransactions().subscribe(data =>{
       this.loading=false;
       this.dataSource.data=data;
+      console.log(data);
+    })
+   }
+
+   deleteTransaction(id: number) {
+    this.loading = true;
+    this.transactionService.deleteTransaction(id).subscribe(data =>{
+      this.loading=false;
+      this.loadTransactions();
       console.log(data);
     })
    }

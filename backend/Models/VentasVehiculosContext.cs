@@ -14,24 +14,22 @@ namespace backend.Models
         public DbSet<Concesionario> Concesionarios { get; set; }
         public DbSet<Transaccion> Transacciones { get; set; }
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    modelBuilder.Entity<Transaccion>()
-        //        .HasOne(t => t.Vehiculo)
-        //        .WithMany()
-        //        .HasForeignKey(t => t.VehiculoID);
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Transaccion>()
+                .HasOne(t => t.Vehiculo)
+                .WithMany()
+                .HasForeignKey(t => t.VehiculoID);
 
-        //    modelBuilder.Entity<Transaccion>()
-        //        .HasOne(t => t.Cliente)
-        //        .WithMany()
-        //        .HasForeignKey(t => t.ClienteID);
+            modelBuilder.Entity<Transaccion>()
+                .HasOne(t => t.Cliente)
+                .WithMany()
+                .HasForeignKey(t => t.ClienteID);
 
-        //    modelBuilder.Entity<Transaccion>()
-        //        .HasOne(t => t.Concesionario)
-        //        .WithMany()
-        //        .HasForeignKey(t => t.ConcesionarioID);
-        //}
+            modelBuilder.Entity<Transaccion>()
+                .HasOne(t => t.Concesionario)
+                .WithMany()
+                .HasForeignKey(t => t.ConcesionarioID);
+        }
     }
-
-        
 }

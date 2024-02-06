@@ -12,9 +12,24 @@ export class TransactionService {
   constructor(private http: HttpClient) {
   }
   
-  getData (): Observable<TransactionInterface[]> {
+  getTransactions (): Observable<TransactionInterface[]> {
     const apiGetData = `${environment.API_URL}${environment.API_GET_SELLS}`
     return this.http.get<TransactionInterface[]>(apiGetData);
+  }
+
+  getTransaction (id:number): Observable<TransactionInterface[]> {
+    const apiGetSpecificData = `${environment.API_URL}${environment.API_GET_SPECIFIC_SELL}${id}`
+    return this.http.get<TransactionInterface[]>(apiGetSpecificData);
+  }
+
+  deleteTransaction (id:number): Observable<TransactionInterface[]> {
+    const apiDeleteData = `${environment.API_URL}${environment.API_DELETE_SELL}${id}`
+    return this.http.get<TransactionInterface[]>(apiDeleteData);
+  }
+
+  updateTransaction (id:number): Observable<TransactionInterface[]> {
+    const apiUpdateData = `${environment.API_URL}${environment.API_EDIT_SELL}${id}`
+    return this.http.get<TransactionInterface[]>(apiUpdateData);
   }
 
 }
